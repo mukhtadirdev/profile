@@ -27,28 +27,28 @@ const impactMetrics = [
 
 export const Impact: React.FC = () => {
   return (
-    <section className="py-24 border-b border-white/10 bg-[#0c0c0e] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="mb-12">
+    <section className="py-20 md:py-24 border-b border-white/10 bg-[#0c0c0e] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+        <div className="mb-10 md:mb-12">
           <span className="text-[11px] font-mono uppercase tracking-widest text-zinc-400 font-medium">
             VERIFIED METRICS
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight mt-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mt-2">
             Engineering Impact & Performance
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {impactMetrics.map((item, idx) => (
             <div
               key={idx}
-              className="p-6 md:p-8 bg-[#101013] border border-white/10 rounded-2xl flex flex-col justify-between space-y-4 hover:border-white/25 transition-colors group"
+              className="p-6 md:p-8 bg-[#101013] border border-white/10 rounded-2xl flex flex-col justify-between space-y-4 hover:border-white/25 transition-colors group overflow-hidden"
             >
               <div>
-                <p className="text-4xl sm:text-5xl lg:text-5xl font-extrabold text-white font-mono tracking-tight group-hover:text-emerald-400 transition-colors">
+                <p className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-mono tracking-tight group-hover:text-emerald-400 transition-colors truncate">
                   {item.value}
                 </p>
-                <h3 className="text-base font-bold text-zinc-200 mt-3">{item.label}</h3>
+                <h3 className="text-sm sm:text-base font-bold text-zinc-200 mt-2 sm:mt-3">{item.label}</h3>
               </div>
               <p className="text-xs text-zinc-400 leading-relaxed font-normal pt-2 border-t border-white/5">
                 {item.subtext}
