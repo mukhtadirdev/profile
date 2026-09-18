@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
             LinkedIn
           </a>
           <a
-            href="https://github.com/mukhtadtirShakh1123"
+            href="https://github.com/mukhtadirdev"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition-colors"

@@ -3,17 +3,18 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
-import { Cursor } from '@/components/Cursor';
-import { ScrollProgress } from '@/components/ScrollProgress';
+import { ClientProviders } from '@/components/ClientProviders';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
-  subsets: ['latin']
+  subsets: ['latin'],
+  display: 'swap'
 });
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
-  subsets: ['latin']
+  subsets: ['latin'],
+  display: 'swap'
 });
 
 export const metadata: Metadata = {
@@ -64,8 +65,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#080808] text-[#f3f4f6] selection:bg-white selection:text-black min-h-screen flex flex-col justify-between`}
       >
-        <ScrollProgress />
-        <Cursor />
+        <ClientProviders />
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />

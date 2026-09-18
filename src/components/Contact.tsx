@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ArrowUpRight, Send, Mail } from 'lucide-react';
+import { ArrowUpRight, Send } from 'lucide-react';
 
 export const Contact: React.FC = () => {
   return (
@@ -51,7 +51,7 @@ export const Contact: React.FC = () => {
             </a>
 
             <a
-              href="https://github.com/mukhtadtirShakh1123"
+              href="https://github.com/mukhtadirdev"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-4 bg-white/[0.04] hover:bg-white/[0.08] text-white border border-white/10 font-medium text-sm rounded-xl transition-colors flex items-center gap-2"
@@ -81,9 +81,9 @@ export const Contact: React.FC = () => {
             </div>
 
             <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl space-y-1">
-              <p className="text-zinc-500 uppercase">Portfolio Website</p>
-              <a href="https://profile-gules-sigma.vercel.app" target="_blank" rel="noopener noreferrer" className="text-white hover:text-indigo-400 transition-colors block font-semibold truncate">
-                profile-gules-sigma.vercel.app
+              <p className="text-zinc-500 uppercase">GitHub Profile</p>
+              <a href="https://github.com/mukhtadirdev" target="_blank" rel="noopener noreferrer" className="text-white hover:text-indigo-400 transition-colors block font-semibold truncate">
+                github.com/mukhtadirdev
               </a>
             </div>
           </div>

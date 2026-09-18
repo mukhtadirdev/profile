@@ -20,8 +20,24 @@ export const Cursor: React.FC = () => {
 
     setIsTouch(false);
 
+    let mouseX = -100;
+    let mouseY = -100;
+    let ticking = false;
+
+    const updateCursorPosition = () => {
+      setPosition({ x: mouseX, y: mouseY });
+      ticking = false;
+    };
+
     const onMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
+      if (!ticking) {
+        window.requestAnimationFrame(updateCursorPosition);
+        ticking = true;
+      }
+
       if (!isVisible) setIsVisible(true);
 
       const target = e.target as HTMLElement | null;
@@ -43,9 +59,9 @@ export const Cursor: React.FC = () => {
     const onMouseLeave = () => setIsVisible(false);
     const onMouseEnter = () => setIsVisible(true);
 
-    window.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseleave', onMouseLeave);
-    document.addEventListener('mouseenter', onMouseEnter);
+    window.addEventListener('mousemove', onMouseMove, { passive: true });
+    document.addEventListener('mouseleave', onMouseLeave, { passive: true });
+    document.addEventListener('mouseenter', onMouseEnter, { passive: true });
 
     return () => {
       window.removeEventListener('mousemove', onMouseMove);

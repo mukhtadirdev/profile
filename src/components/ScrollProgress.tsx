@@ -6,16 +6,26 @@ export const ScrollProgress: React.FC = () => {
   const [completion, setCompletion] = useState(0);
 
   useEffect(() => {
+    let ticking = false;
+
     const updateScrollCompletion = () => {
       const currentProgress = window.scrollY;
       const scrollHeight = document.body.scrollHeight - window.innerHeight;
       if (scrollHeight) {
         setCompletion(Number((currentProgress / scrollHeight).toFixed(3)) * 100);
       }
+      ticking = false;
     };
 
-    window.addEventListener('scroll', updateScrollCompletion);
-    return () => window.removeEventListener('scroll', updateScrollCompletion);
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollCompletion);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (

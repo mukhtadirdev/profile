@@ -1,7 +1,18 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
+  poweredByHeader: false,
+  compress: true,
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'framer-motion']
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production'
+  },
+  images: {
+    formats: ['image/avif', 'image/webp']
+  }
 };
 
 export default nextConfig;
