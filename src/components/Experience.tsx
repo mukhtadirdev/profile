@@ -3,7 +3,7 @@
 import React from 'react';
 import { SectionHeading } from './SectionHeading';
 import { experiences } from '@/data/experience';
-import { Briefcase, Calendar } from 'lucide-react';
+import { Briefcase, Calendar, Building } from 'lucide-react';
 
 export const Experience: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ export const Experience: React.FC = () => {
         />
 
         <div className="relative pl-6 md:pl-10 border-l border-white/10 space-y-12 ml-2 md:ml-4">
-          {experiences.map((exp, idx) => (
+          {experiences.map((exp) => (
             <div key={exp.id} className="relative group">
               {/* Timeline Bullet Dot */}
               <div
@@ -31,11 +31,17 @@ export const Experience: React.FC = () => {
               <div className="p-6 md:p-8 bg-[#0e0e11] border border-white/10 rounded-2xl space-y-4 hover:border-white/25 transition-all duration-300">
                 <div className="flex flex-wrap items-start justify-between gap-4 border-b border-white/5 pb-4">
                   <div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 flex-wrap">
                       <h3 className="text-xl md:text-2xl font-bold text-white">{exp.company}</h3>
                       {exp.isCurrent && (
                         <span className="px-2.5 py-0.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-[10px] rounded-full">
                           PRESENT ROLE
+                        </span>
+                      )}
+                      {exp.client && (
+                        <span className="px-2.5 py-0.5 bg-sky-500/10 border border-sky-500/20 text-sky-400 font-mono text-[10px] rounded-full flex items-center gap-1">
+                          <Building className="w-3 h-3" />
+                          <span>Client: {exp.client}</span>
                         </span>
                       )}
                     </div>
@@ -57,11 +63,11 @@ export const Experience: React.FC = () => {
 
                 {/* Highlights list */}
                 {exp.highlights && exp.highlights.length > 0 && (
-                  <ul className="space-y-2 pt-2 text-xs md:text-sm text-zinc-300 font-sans">
+                  <ul className="space-y-2.5 pt-2 text-xs md:text-sm text-zinc-300 font-sans">
                     {exp.highlights.map((h, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <span className="text-zinc-500 font-mono text-xs mt-0.5">•</span>
-                        <span>{h}</span>
+                      <li key={i} className="flex items-start gap-2.5">
+                        <span className="text-emerald-400 font-mono text-xs mt-0.5">▸</span>
+                        <span className="leading-relaxed">{h}</span>
                       </li>
                     ))}
                   </ul>

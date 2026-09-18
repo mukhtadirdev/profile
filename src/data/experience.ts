@@ -3,7 +3,7 @@ export interface ExperienceItem {
   company: string;
   role: string;
   period: string;
-  location?: string;
+  client?: string;
   isCurrent?: boolean;
   description: string;
   focus: string[];
@@ -12,41 +12,65 @@ export interface ExperienceItem {
 
 export const experiences: ExperienceItem[] = [
   {
-    id: 'virtusa',
-    company: 'Virtusa',
-    role: 'Lead Frontend Developer / Senior Frontend Engineer',
-    period: 'June 2025 – Present',
+    id: 'tcs',
+    company: 'Tata Consultancy Services (TCS)',
+    role: 'System Analyst, Lead Frontend Developer',
+    period: '03/2026 – Present',
+    client: 'UBS',
     isCurrent: true,
     description:
-      'Leading enterprise frontend development initiatives with a focus on scalable React architectures, Next.js web platforms, client-facing engineering, and performance optimization.',
+      'Leading frontend architecture and AI-powered product interfaces for a global banking client (UBS), standardizing React, Next.js, and TypeScript architectures.',
     focus: [
-      'Enterprise frontend development',
+      'Frontend Architecture',
+      'AI Interfaces',
+      'React & Next.js',
+      'TypeScript',
+      'Performance Engineering',
+      'WCAG Accessibility',
+      'Banking Enterprise'
+    ],
+    highlights: [
+      'Owned frontend architecture for a global banking client (UBS), standardizing on React, TypeScript, and Next.js to establish a reusable, component-based system adopted across product teams, reducing engineering rework by 82% and cutting new-feature build time by 38%.',
+      'Built the UI for an AI-powered transaction-processing agent tuned for speed while sustaining 79% decision accuracy, surfacing outcomes across 23M+ weekly transactions for UBS stakeholders.',
+      'Led the design and delivery of AI-powered frontend interfaces, translating complex AI-agent workflows — including speech-driven and conversational interfaces — into production-ready product experiences, adopted by 13,000+ users and reducing task completion time by 47%.',
+      'Drove adoption of AI-assisted development tools across the team, cutting repetitive coding tasks and setting the workflow standard for feature delivery, reducing development time by 76%.',
+      'Own performance strategy for key product surfaces, auditing and optimizing rendering to improve Core Web Vitals and application responsiveness, improving LCP/CLS by 26% and reducing load time by 44%.',
+      'Set accessibility standards for the team by implementing semantic HTML, ARIA attributes, and full keyboard navigation support against WCAG guidelines, reducing accessibility defects by 88%.'
+    ]
+  },
+  {
+    id: 'virtusa',
+    company: 'Virtusa',
+    role: 'Lead Frontend Developer',
+    period: '06/2025 – 02/2026',
+    description:
+      'Spearheaded enterprise frontend development initiatives with a focus on scalable React architectures, Next.js web platforms, client-facing engineering, and performance optimization.',
+    focus: [
+      'Enterprise Frontend',
       'React',
       'Next.js',
       'TypeScript',
-      'Performance optimization',
-      'Modern frontend architecture',
-      'Client-facing engineering'
+      'Performance Optimization',
+      'Client-Facing Engineering'
     ],
     highlights: [
-      'Architecting modern web applications for fortune-500 enterprise clients.',
-      'Driving frontend performance standards, Web Vitals benchmarks, and CI/CD quality gates.',
-      'Leading cross-functional technical alignment between product management, UX design, and backend engineering.'
+      'Architected modern web applications for fortune-500 enterprise clients.',
+      'Driven frontend performance standards, Web Vitals benchmarks, and CI/CD quality gates.',
+      'Led cross-functional technical alignment between product management, UX design, and backend engineering.'
     ]
   },
   {
     id: 'coforge',
     company: 'Coforge',
     role: 'Lead Frontend Developer',
-    period: 'June 2025 – February 2026',
+    period: '06/2025 – 02/2026',
     description:
-      'Spearheaded frontend architecture and technical delivery for large-scale enterprise clients, establishing modern React component standards and cross-team design systems.',
+      'Spearheaded frontend architecture and technical delivery for enterprise clients, establishing modern React component standards and cross-team design systems.',
     focus: [
       'React',
-      'Frontend architecture',
-      'Enterprise applications',
-      'Performance',
-      'Cross-functional collaboration'
+      'Frontend Architecture',
+      'Enterprise Applications',
+      'Performance Optimization'
     ],
     highlights: [
       'Engineered reusable enterprise UI component systems reducing development cycle time.',
@@ -58,14 +82,14 @@ export const experiences: ExperienceItem[] = [
     id: 'valuelabs',
     company: 'ValueLabs',
     role: 'Senior Software Engineer',
-    period: 'June 2023 – May 2025',
+    period: '06/2023 – 05/2025',
     description:
       'Engineered high-throughput enterprise web platforms using React, TypeScript, and microfrontend architectures for global clients.',
     focus: [
       'React',
       'TypeScript',
-      'Frontend architecture',
-      'Enterprise web applications'
+      'Frontend Architecture',
+      'Enterprise Web Apps'
     ],
     highlights: [
       'Built scalable React single-page and server-rendered web applications.',
@@ -77,14 +101,14 @@ export const experiences: ExperienceItem[] = [
     id: 'persistent',
     company: 'Persistent',
     role: 'Senior Front-End Engineer',
-    period: 'May 2022 – June 2023',
+    period: '05/2022 – 06/2023',
     description:
       'Developed high-performance digital platforms and client applications using React, JavaScript (ES6+), and modern state management.',
     focus: [
       'React',
-      'Digital platforms',
+      'Digital Platforms',
       'Performance',
-      'Frontend engineering'
+      'Frontend Engineering'
     ],
     highlights: [
       'Constructed complex interactive dashboards and real-time data visualizers.',
@@ -96,14 +120,14 @@ export const experiences: ExperienceItem[] = [
     id: 'persistent-banking',
     company: 'Persistent Digital Banking',
     role: 'Software Engineer / Frontend Engineer',
-    period: 'December 2019 – May 2022',
+    period: '12/2019 – 05/2022',
     description:
       'Delivered robust digital banking software solutions, secure customer portals, and API integrations with focus on reliability and security.',
     focus: [
-      'Digital banking',
+      'Digital Banking',
       'React',
       'JavaScript',
-      'Enterprise applications'
+      'Enterprise Applications'
     ],
     highlights: [
       'Engineered responsive web interfaces for core banking and transaction modules.',
@@ -115,9 +139,9 @@ export const experiences: ExperienceItem[] = [
     id: 'wotr',
     company: 'WOTR',
     role: 'Software Engineer',
-    period: 'February 2019 – December 2019',
+    period: '02/2019 – 12/2019',
     description:
-      'Started professional frontend career developing web applications, responsive user interfaces, and custom JavaScript scripts.',
+      'Developed web applications, responsive user interfaces, and custom JavaScript modules.',
     focus: [
       'Software Engineering',
       'JavaScript',
