@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { VisitorCounter } from './VisitorCounter';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,14 +45,17 @@ export const Navbar: React.FC = () => {
             <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-zinc-600 group-hover:bg-white transition-colors" />
           </Link>
 
-          {/* Availability Status Badge & Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            <div className="flex items-center gap-2.5 px-3 py-1 bg-white/[0.03] border border-white/10 rounded-full text-xs text-zinc-300 font-mono">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span>Available for opportunities</span>
+          {/* Status Badges & Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-6">
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2.5 px-3 py-1 bg-white/[0.03] border border-white/10 rounded-full text-xs text-zinc-300 font-mono">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span>Available for opportunities</span>
+              </div>
+              <VisitorCounter />
             </div>
 
             <nav className="flex items-center gap-6 text-sm text-zinc-400 font-medium">
@@ -71,9 +75,10 @@ export const Navbar: React.FC = () => {
           {/* Mobile Hamburger Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-zinc-300 hover:text-white focus:outline-none"
+            className="md:hidden p-2 text-zinc-300 hover:text-white focus:outline-none flex items-center gap-2"
             aria-label="Toggle Navigation Menu"
           >
+            <VisitorCounter />
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
@@ -83,12 +88,15 @@ export const Navbar: React.FC = () => {
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-[#0a0a0a]/98 backdrop-blur-xl flex flex-col justify-between px-8 py-20 md:hidden animate-in fade-in duration-200">
           <div className="space-y-6">
-            <div className="flex items-center gap-2.5 px-3 py-1.5 bg-white/[0.04] border border-white/10 rounded-full text-xs text-zinc-300 font-mono w-fit">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span>Available for opportunities</span>
+            <div className="flex flex-wrap gap-2">
+              <div className="flex items-center gap-2.5 px-3 py-1.5 bg-white/[0.04] border border-white/10 rounded-full text-xs text-zinc-300 font-mono w-fit">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span>Available for opportunities</span>
+              </div>
+              <VisitorCounter />
             </div>
 
             <nav className="flex flex-col space-y-6 text-2xl font-bold text-white pt-6 border-t border-white/10">

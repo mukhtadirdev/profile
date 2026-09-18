@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { Project } from '@/data/projects';
 import { ProjectMockup } from './ProjectMockup';
+import { TechLogo } from './TechLogos';
 
 interface ProjectCardProps {
   project: Project;
@@ -52,14 +53,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             {project.description}
           </p>
 
-          {/* Technology Badges */}
+          {/* Technology Badges with SVG Logos */}
           <div className="flex flex-wrap gap-2 pt-2">
             {project.technologies.map((tech) => (
               <span
                 key={tech}
-                className="px-2.5 py-1 bg-white/[0.03] border border-white/10 rounded-md text-xs font-mono text-zinc-300 group-hover:border-white/20 transition-colors"
+                className="flex items-center gap-1.5 px-2.5 py-1 bg-white/[0.03] border border-white/10 rounded-md text-xs font-mono text-zinc-300 group-hover:border-white/20 transition-colors"
               >
-                {tech}
+                <TechLogo name={tech} className="w-3.5 h-3.5 shrink-0" />
+                <span>{tech}</span>
               </span>
             ))}
           </div>

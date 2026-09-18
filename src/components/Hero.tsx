@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDownRight, ArrowRight, Download, Terminal } from 'lucide-react';
+import { TechLogo } from './TechLogos';
 
 export const Hero: React.FC = () => {
   return (
@@ -47,22 +48,37 @@ export const Hero: React.FC = () => {
             7+ years of experience engineering high-performance web applications, modern frontend architectures, and enterprise platforms.
           </motion.p>
 
-          {/* Key Tech Stack Summary Pill */}
+          {/* Key Tech Stack Summary Strip with SVG Icons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25, ease: 'easeOut' }}
-            className="text-sm font-mono text-zinc-400 flex items-center gap-2 flex-wrap"
+            className="text-sm font-mono text-zinc-400 flex items-center gap-3 flex-wrap pt-1"
           >
-            <span className="text-white font-medium">React</span>
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white/[0.03] border border-white/10 rounded-md text-white font-medium">
+              <TechLogo name="React" className="w-4 h-4" />
+              <span>React</span>
+            </span>
             <span className="text-zinc-600">·</span>
-            <span className="text-white font-medium">Next.js</span>
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white/[0.03] border border-white/10 rounded-md text-white font-medium">
+              <TechLogo name="Next.js" className="w-4 h-4" />
+              <span>Next.js</span>
+            </span>
             <span className="text-zinc-600">·</span>
-            <span className="text-white font-medium">TypeScript</span>
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white/[0.03] border border-white/10 rounded-md text-white font-medium">
+              <TechLogo name="TypeScript" className="w-4 h-4" />
+              <span>TypeScript</span>
+            </span>
             <span className="text-zinc-600">·</span>
-            <span className="text-white font-medium">Microfrontends</span>
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white/[0.03] border border-white/10 rounded-md text-white font-medium">
+              <TechLogo name="JavaScript" className="w-4 h-4" />
+              <span>Microfrontends</span>
+            </span>
             <span className="text-zinc-600">·</span>
-            <span className="text-emerald-400 font-medium">Performance Engineering</span>
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-md text-emerald-400 font-medium">
+              <TechLogo name="Tailwind CSS" className="w-4 h-4" />
+              <span>Performance</span>
+            </span>
           </motion.div>
 
           {/* Action Call-To-Actions */}

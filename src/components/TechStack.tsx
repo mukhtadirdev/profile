@@ -3,6 +3,7 @@
 import React from 'react';
 import { SectionHeading } from './SectionHeading';
 import { techCategories } from '@/data/skills';
+import { TechLogo } from './TechLogos';
 
 export const TechStack: React.FC = () => {
   return (
@@ -30,9 +31,10 @@ export const TechStack: React.FC = () => {
                 {cat.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 bg-white/[0.03] border border-white/10 hover:border-white/20 hover:bg-white/[0.06] rounded-md text-xs font-mono text-zinc-300 transition-colors"
+                    className="flex items-center gap-2 px-3 py-1.5 bg-white/[0.03] border border-white/10 hover:border-white/20 hover:bg-white/[0.06] rounded-md text-xs font-mono text-zinc-300 transition-colors"
                   >
-                    {skill}
+                    <TechLogo name={skill} className="w-4 h-4 shrink-0" />
+                    <span>{skill}</span>
                   </span>
                 ))}
               </div>

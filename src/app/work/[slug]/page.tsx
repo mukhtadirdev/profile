@@ -5,6 +5,7 @@ import { Metadata } from 'next';
 import { ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, Cpu } from 'lucide-react';
 import { projects } from '@/data/projects';
 import { ProjectMockup } from '@/components/ProjectMockup';
+import { TechLogo } from '@/components/TechLogos';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -92,7 +93,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               <p className="text-white font-semibold mt-1">Modular / Microfrontends</p>
             </div>
             <div>
-              <p className="text-zinc-500 uppercase">Status</p>
               <p className="text-emerald-400 font-semibold mt-1">Production Deployed</p>
             </div>
           </div>
@@ -191,9 +191,10 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 {project.technologies.map((t) => (
                   <span
                     key={t}
-                    className="px-3 py-1.5 bg-white/[0.04] border border-white/10 rounded-lg text-xs font-mono text-zinc-200"
+                    className="flex items-center gap-1.5 px-3 py-1.5 bg-white/[0.04] border border-white/10 rounded-lg text-xs font-mono text-zinc-200"
                   >
-                    {t}
+                    <TechLogo name={t} className="w-4 h-4 shrink-0" />
+                    <span>{t}</span>
                   </span>
                 ))}
               </div>
