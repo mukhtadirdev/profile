@@ -1,0 +1,103 @@
+'use client';
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ArrowDownRight, ArrowRight, Download, Terminal } from 'lucide-react';
+
+export const Hero: React.FC = () => {
+  return (
+    <section className="relative min-h-[90vh] flex flex-col justify-center pt-32 pb-20 overflow-hidden">
+      {/* Background Decorative Ambient Glows */}
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-sky-500/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 right-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10">
+        <div className="max-w-4xl space-y-8">
+          {/* Eyebrow Label */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+            className="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-white/[0.03] border border-white/10 rounded-md text-xs font-mono text-zinc-300"
+          >
+            <Terminal className="w-3.5 h-3.5 text-sky-400" />
+            <span className="uppercase tracking-widest font-semibold">SENIOR FRONTEND ENGINEER</span>
+          </motion.div>
+
+          {/* Main Editorial Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.05]"
+          >
+            Building scalable digital experiences with{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-400">
+              React, Next.js & TypeScript.
+            </span>
+          </motion.h1>
+
+          {/* Supporting Text */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+            className="text-lg md:text-xl text-zinc-400 leading-relaxed font-normal max-w-3xl"
+          >
+            7+ years of experience engineering high-performance web applications, modern frontend architectures, and enterprise platforms.
+          </motion.p>
+
+          {/* Key Tech Stack Summary Pill */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25, ease: 'easeOut' }}
+            className="text-sm font-mono text-zinc-400 flex items-center gap-2 flex-wrap"
+          >
+            <span className="text-white font-medium">React</span>
+            <span className="text-zinc-600">·</span>
+            <span className="text-white font-medium">Next.js</span>
+            <span className="text-zinc-600">·</span>
+            <span className="text-white font-medium">TypeScript</span>
+            <span className="text-zinc-600">·</span>
+            <span className="text-white font-medium">Microfrontends</span>
+            <span className="text-zinc-600">·</span>
+            <span className="text-emerald-400 font-medium">Performance Engineering</span>
+          </motion.div>
+
+          {/* Action Call-To-Actions */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
+            className="pt-4 flex flex-wrap items-center gap-4 sm:gap-6"
+          >
+            <a
+              href="#work"
+              className="px-6 py-3.5 bg-white text-black font-semibold text-sm rounded-lg hover:bg-zinc-200 transition-colors flex items-center gap-2 group shadow-xl"
+            >
+              <span>View Selected Work</span>
+              <ArrowDownRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform" />
+            </a>
+
+            <a
+              href="mailto:mukhtadir.shaikh2025@gmail.com?subject=Mukhtadir%20Shaikh%20-%20Resume%20Request"
+              className="px-6 py-3.5 bg-white/[0.04] hover:bg-white/[0.08] text-white border border-white/10 font-semibold text-sm rounded-lg transition-colors flex items-center gap-2"
+            >
+              <Download className="w-4 h-4 text-zinc-400" />
+              <span>Download Resume</span>
+            </a>
+
+            <a
+              href="#contact"
+              className="text-sm font-semibold text-zinc-400 hover:text-white transition-colors flex items-center gap-1.5 group py-2"
+            >
+              <span>Let's work together</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
