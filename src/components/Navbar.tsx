@@ -1,22 +1,12 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { VisitorCounter } from './VisitorCounter';
 
 export const Navbar: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navLinks = [
     { name: 'Work', href: '#work' },
@@ -28,20 +18,14 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? 'py-3 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/10 shadow-2xl'
-            : 'py-5 bg-transparent border-b border-transparent'
-        }`}
-      >
+      <header className="fixed top-0 left-0 right-0 z-50 py-5 transition-all duration-300 bg-[#080808]/70 backdrop-blur-md border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between gap-2">
           {/* Brand Name */}
           <Link
             href="/"
             className="group flex items-center gap-2 text-white font-bold text-base sm:text-lg md:text-xl tracking-tight transition-opacity hover:opacity-90 shrink-0"
           >
-            <span className="truncate max-w-[170px] sm:max-w-none">Mukhtadir Shaikh</span>
+            <span className="truncate max-w-[120px] sm:max-w-none">Mukhtadir</span>
             <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-zinc-600 group-hover:bg-white transition-colors" />
           </Link>
 
@@ -49,11 +33,12 @@ export const Navbar: React.FC = () => {
           <div className="hidden lg:flex items-center gap-6">
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-2.5 px-3 py-1 bg-white/[0.03] border border-white/10 rounded-full text-xs text-zinc-300 font-mono whitespace-nowrap">
-                <span className="relative flex h-2 w-2 shrink-0">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative flex h-2 w-2 shrink-0 items-center justify-center">
+                  <span className="status-pulse absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                <span>Available for opportunities</span>
+                <span className="hidden sm:inline">Available for opportunities</span>
+                <span className="sm:hidden">Open to work</span>
               </div>
               <VisitorCounter />
             </div>
@@ -92,11 +77,12 @@ export const Navbar: React.FC = () => {
           <div className="space-y-6">
             <div className="flex flex-wrap gap-2 pt-2">
               <div className="flex items-center gap-2.5 px-3 py-1.5 bg-white/[0.04] border border-white/10 rounded-full text-xs text-zinc-300 font-mono w-fit">
-                <span className="relative flex h-2 w-2 shrink-0">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative flex h-2 w-2 shrink-0 items-center justify-center">
+                  <span className="status-pulse absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                <span>Available for opportunities</span>
+                <span className="hidden sm:inline">Available for opportunities</span>
+                <span className="sm:hidden">Open to work</span>
               </div>
               <VisitorCounter />
             </div>
@@ -116,8 +102,8 @@ export const Navbar: React.FC = () => {
             </nav>
           </div>
 
-          <div className="space-y-3 pt-6 border-t border-white/10 text-xs text-zinc-400 font-mono">
-            <p>Senior Frontend Engineer · React & Next.js Architect</p>
+          <div className="space-y-3 pt-6 border-t border-white/10 text-[11px] text-zinc-400 font-mono">
+            <p>Frontend Engineer · React / Next.js</p>
             <p className="text-white truncate">mukhtadir.shaikh2025@gmail.com</p>
           </div>
         </div>

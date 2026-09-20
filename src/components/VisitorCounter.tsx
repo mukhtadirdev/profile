@@ -35,8 +35,8 @@ export const VisitorCounter: React.FC<VisitorCounterProps> = ({ compact = false 
 
   return (
     <div className="flex items-center gap-1.5 px-2.5 py-1 bg-white/[0.04] border border-white/10 rounded-full text-xs font-mono text-zinc-300 select-none whitespace-nowrap shrink-0">
-      <div className="relative flex h-2 w-2 shrink-0">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+      <div className="relative flex h-2 w-2 shrink-0 items-center justify-center">
+        <span className="status-pulse absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
         <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
       </div>
       <Eye className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
